@@ -6,5 +6,5 @@
 <img src="https://github.com/MSagGik/MusicPlayer/assets/108148690/0a435a0c-779a-4dd1-b800-daf59305b457"/>
 </p>
 <p align="left">
-<img src="https://github.com/MSagGik/MusicPlayer/assets/108148690/f3f5d0c5-2075-4309-a111-326cf16e5996"/>
+<img src="https://github.com/MSagGik/MusicPlayer/assets/108148690/2fed5d57-044a-43b4-827b-ef1ad74948d4"/>
 </p>
