@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
         // проверка разрешений
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
                 && ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED) {
-            Toast.makeText(this, "Данны разрешения на чтение аудио-файлов и демонстрацию эквалайзера", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Данны разрешения на чтение аудио-файлов и демонстрацию эквалайзера", Toast.LENGTH_SHORT).show();
         } else { // запрос нескольких разрешений
             storagePermissionLauncher.launch(PERMISSION);
         }
@@ -160,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
                             switch (permission) {
                                 case Manifest.permission.READ_EXTERNAL_STORAGE:
                                     if (granted) {
-                                        Toast.makeText(this, "Разрешение дано к аудиофайлам", Toast.LENGTH_SHORT).show();
+                                        //Toast.makeText(this, "Разрешение дано к аудиофайлам", Toast.LENGTH_SHORT).show();
                                         // извлечение треков из памяти
                                         fetchMusicTrack();
                                     } else {
@@ -168,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
                                     } break;
                                 case Manifest.permission.RECORD_AUDIO:
                                     if (granted) {
-                                        Toast.makeText(this, "Разрешение дано к демонстрации эквалайзера", Toast.LENGTH_SHORT).show();
+                                        //Toast.makeText(this, "Разрешение дано к демонстрации эквалайзера", Toast.LENGTH_SHORT).show();
                                         // активация эквалайзера
                                         activateAudioVisualizer();
                                     } else {
