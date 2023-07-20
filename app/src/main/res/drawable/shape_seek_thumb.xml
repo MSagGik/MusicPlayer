@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item> <!-- Элемент списка-->
+        <shape android:shape="oval"> <!-- Форма-->
+            <size android:width="14dp"
+                android:height="14dp"/>
+            <!-- Цвет фона-->
+            <gradient
+                android:startColor="#FCF43C"
+                android:endColor="#FE93F3"
+                android:angle="225"/>
+        </shape>
+    </item>
+</selector>

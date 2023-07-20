@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_start"
+    android:elevation="90dp"
+    android:focusable="true"
+    android:clickable="true"
+    android:visibility="gone"
+    android:id="@+id/playerView">
+
+<!--    мутный фон-->
+    <com.jgabrielfreitas.core.BlurImageView
+        android:id="@+id/blurImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/app_name"/>
+
+<!--    верхний экшен бар-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintVertical_bias="0"
+        android:layout_marginEnd="10dp">
+
+        <ImageButton
+            android:id="@+id/playerCloseBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:srcCompat="@drawable/btn_back"
+            android:background="@null"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:padding="10dp"/>
+
+        <TextView
+            android:id="@+id/songNameView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toEndOf="@id/playerCloseBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Author - Name SoundTrack"
+            android:gravity="center_vertical"
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/artworkWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/headWrapper"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent="0.4"
+        app:layout_constraintVertical_bias="0">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/artworkView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/shape_seek_thumb"
+            app:civ_border_overlay="true"
+            app:civ_border_color="?attr/colorPrimary"
+            app:civ_border_width="2dp"
+            android:padding="4sp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/seekBarWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/artworkWrapper"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintVertical_bias="0"
+        android:paddingHorizontal="10dp">
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:progressTint="#FCF43C"
+            android:thumb="@drawable/baseline_circle_24"
+            style="@style/customSeekBar"/>
+        <TextView
+            android:id="@+id/progressView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/seekBar"
+            android:text="0:0"
+            android:layout_marginStart="10dp"/>
+        <TextView
+            android:id="@+id/durationView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/seekBar"
+            android:text="0:0"
+            android:layout_marginStart="10dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/controlWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/seekBarWrapper"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintVertical_bias="0"
+        android:layout_marginHorizontal="10dp">
+
+        <ImageButton
+            android:id="@+id/repeatModeBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:srcCompat="@drawable/btn_repeat_one"
+            android:background="@null"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:padding="10dp"/>
+
+        <ImageButton
+            android:id="@+id/skipPreviousBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:srcCompat="@drawable/btn_previous"
+            android:background="@null"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toStartOf="@id/playPauseBtn"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:padding="10dp"/>
+
+        <ImageButton
+            android:id="@+id/playPauseBtn"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:srcCompat="@drawable/btn_play"
+            android:background="@null"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:padding="10dp"/>
+
+        <ImageButton
+            android:id="@+id/skipNextBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:srcCompat="@drawable/btn_next"
+            android:background="@null"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toEndOf="@id/playPauseBtn"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:padding="10dp"/>
+
+        <ImageButton
+            android:id="@+id/playlistBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:srcCompat="@drawable/btn_file_on"
+            android:background="@null"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:padding="10dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--    эквалайзер-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/audioVisualizerWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent="0.3"
+        app:layout_constraintVertical_bias="0">
+        <com.chibde.visualizer.BarVisualizer
+            android:id="@+id/visualizer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
