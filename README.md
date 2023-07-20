@@ -1,4 +1,4 @@
-# SixthLessonNotebook
+# MusicPlayer
 <p align="left">
 <img src=""/>
 </p>
